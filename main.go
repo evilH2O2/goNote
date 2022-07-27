@@ -1,11 +1,23 @@
 package main
 
 import (
-	"goNote/oslib"
+	"goNote/errorslib"
 )
 
 func main() {
-	oslib.InvokeOSFile()
+	errorslib.InvokeErrorsCustom()
+	// errorslib.InvokeErrorsExample()
+
+	// byteslib.InvokeBytesExample()
+
+	// loglib.InvokeLogExample()
+
+	// iolib.InvokeBufioExample()
+
+	// oslib.GetALLEnviron()
+	// oslib.InvokeOSProcess()
+	// oslib.InvokeOSFileWrite()
+	// oslib.InvokeOSFile()
 	// oslib.InvokeOSLibExample()
 
 	// concurrencyexample.InvokeAtomicUse()
