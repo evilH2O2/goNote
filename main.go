@@ -5,7 +5,8 @@ import (
 )
 
 func main() {
-	oslib.InvokeOSLibExample()
+	oslib.InvokeOSFile()
+	// oslib.InvokeOSLibExample()
 
 	// concurrencyexample.InvokeAtomicUse()
 	// concurrencyexample.InvokeAtomicExample()
