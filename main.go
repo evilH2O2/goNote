@@ -1,11 +1,9 @@
 package main
 
-import (
-	"goNote/errorslib"
-)
+import "goNote/funcexample"
 
 func main() {
-	errorslib.InvokeErrorsCustom()
+	// errorslib.InvokeErrorsCustom()
 	// errorslib.InvokeErrorsExample()
 
 	// byteslib.InvokeBytesExample()
@@ -43,6 +41,7 @@ func main() {
 	// methodexample.VictimConfig()
 
 	// structexample.SetVictim()
+	// structexample.InvokeStructFunc()
 
 	// customtypeexample.Customtypeexample()
 
@@ -56,12 +55,13 @@ func main() {
 	// htest()
 
 	// printFormatExample()
+
 	// pointer.PointerVar1()
 
 	// processcontrol.FunSwichCase()
 	// processcontrol.FunFor()
 
-	// funcexample.InvokeNewFunc()
+	funcexample.InvokeNewFunc()
 
 	// fmt.Println("main")
 	// initexample.InitExample()
