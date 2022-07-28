@@ -66,6 +66,8 @@ func SetVictim() {
 	fmt.Println("admin2 hostname => ", (*admin2).Hostname)
 	// 简写。相当于 admin2.VictimData.Hostname
 	fmt.Println("admin2 hostname => ", admin2.Hostname)
+
+	anonymousStruct()
 }
 
 // 继承
@@ -78,4 +80,17 @@ type AttackData struct {
 type AdminData struct {
 	// 引用类型也可以
 	*VictimData
+}
+
+// 匿名结构体
+func anonymousStruct() {
+	var var1 struct {
+		id   int
+		name string
+	}
+
+	var1.id = 10
+	var1.name = "A"
+
+	fmt.Printf("var1: %v\n", var1)
 }
