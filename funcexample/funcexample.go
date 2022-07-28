@@ -78,4 +78,16 @@ func InvokeNewFunc() {
 	newf(12)
 
 	deferExample()
+
+	// 函数作为参数
+	funcArg("daming", sayHi)
+}
+
+func sayHi(name string) {
+	fmt.Printf("hi %s\n", name)
+}
+
+// 函数作为参数
+func funcArg(name string, f func(string)) {
+	f(name)
 }
