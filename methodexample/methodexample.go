@@ -2,6 +2,9 @@ package methodexample
 
 import "fmt"
 
+// 结构体方法
+// 有接收者的函数。与结构体所绑定
+
 // 定义结构体
 type VictimData struct {
 	Hostname string
@@ -21,8 +24,10 @@ func (victim VictimData) enumVictimData() {
 
 // 可以接收指针
 func (victim *VictimData) setIp() {
-	// 可以简写。victim.Ip
-	(*victim).Ip = "10.10.10.12"
+	// (*victim).Ip = "10.10.10.12"
+	// 可以简写:
+	// 自动解引用：
+	victim.Ip = "10.10.10.12"
 }
 
 // 调用方法
