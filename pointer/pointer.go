@@ -21,6 +21,25 @@ func numberAddPointer(num2 *int) {
 	fmt.Printf("num2 => %d, addr => %p\n", *num2, &num2)
 }
 
+func arrayPointer() {
+	// golang 指向数组的指针与 C 不同
+	// golang 数组中的每个值都是指针类型
+	// C 赋值时是取数组首地址，而 golang需要每个都赋值
+
+	var1 := [3]int{1, 2, 3}
+
+	ptr1 := [3]*int{}
+
+	// 不能直接 ptr1 = &var1
+	for i := 0; i < len(var1); i++ {
+		ptr1[i] = &var1[i]
+	}
+
+	fmt.Printf("ptr1: %v\n", ptr1)
+	fmt.Printf("ptr1: %T\n", ptr1[0])
+	fmt.Printf("ptr1: %v\n", *ptr1[0])
+}
+
 func PointerVar1() {
 	var number int = 0
 	var numberAddr *int = &number
@@ -34,4 +53,6 @@ func PointerVar1() {
 	fmt.Printf("number => %d, addr => %p\n", number, &number)
 	fmt.Printf("now number => %d, addr => %p\n", number, &number)
 	fmt.Printf("nuiPionter => %v, value => %d, addr => %p\n", nuiPionter, *nuiPionter, &nuiPionter)
+
+	arrayPointer()
 }
