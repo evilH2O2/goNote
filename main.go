@@ -1,8 +1,11 @@
 package main
 
-import "goNote/funcexample"
+import (
+	"goNote/errorslib"
+)
 
 func main() {
+	errorslib.InvokeErrorsRecover()
 	// errorslib.InvokeErrorsCustom()
 	// errorslib.InvokeErrorsExample()
 
@@ -61,7 +64,8 @@ func main() {
 	// processcontrol.FunSwichCase()
 	// processcontrol.FunFor()
 
-	funcexample.InvokeNewFunc()
+	// funcexample.InvokeNewFunc()
+	// funcexample.InvokeFunClosure()
 
 	// fmt.Println("main")
 	// initexample.InitExample()
