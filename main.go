@@ -1,11 +1,15 @@
 package main
 
-import (
-	"goNote/errorslib"
-)
+import "goNote/flagexample"
 
 func main() {
-	errorslib.InvokeErrorsRecover()
+	flagexample.InvokeFlag()
+
+	// httpexample.InvokeHttpExample()
+
+	// netexample.InvokeNetLib()
+
+	// errorslib.InvokeErrorsRecover()
 	// errorslib.InvokeErrorsCustom()
 	// errorslib.InvokeErrorsExample()
 
@@ -57,6 +61,7 @@ func main() {
 	// hello()
 	// htest()
 
+	// pointer.PointerVar2()
 	// printFormatExample()
 
 	// pointer.PointerVar1()
