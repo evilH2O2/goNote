@@ -56,3 +56,43 @@ func PointerVar1() {
 
 	arrayPointer()
 }
+
+func echoNumber(num *int) {
+
+	// num 中存的是一个地址，要是取值的话，需要取值符 *num
+	// 指针变量在使用的时候，非特殊情况都是需要取值符的 *
+	// 因为你要用它的值进行操作
+	fmt.Println("number", *num)
+
+	// 这里取的是新变量 num 的地址，而不是 num 保存的那个参数的地址
+	// 所以是 &num，而不是 num
+	fmt.Printf("number addr %p\n", &num)
+
+	// 这是参数的值保存的地址，对照 ptrNum 的地址，是一样的
+	fmt.Printf("num addr %p\n", num)
+}
+
+func PointerVar2() {
+	var ptrNum int = 10
+	var number *int = &ptrNum
+	fmt.Printf("ptrNum addr: %p\n", &ptrNum)
+
+	// 指针类型未初始化?赋值?之前是不能直接使用的
+	// 大概是未初始化，这么说
+	// 报错：panic: runtime error: invalid memory address or nil pointer dereference
+	// 就是这样:
+
+	// var ptrA *int
+	// echoNumber(ptrA)
+
+	// 函数的参数需要的是一个值，一个 int 指针类型的值
+	// 因为 num 被声明为 *int
+	// number 也被声明为 *int
+	// 所以直接传递 number 就可以
+
+	// 因为传递的是 ptrNum 的地址，所以不要加取值符 *number
+	// 传递的是地址而不是值
+	// 因为后续在函数内的操作是直接作用在 ptrNum 上的
+	// 只是需要值的话，用值拷贝就是了，不然为什么用指针变量
+	echoNumber(number)
+}
