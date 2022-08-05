@@ -1,6 +1,8 @@
 package funcexample
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 闭包
 
@@ -12,6 +14,27 @@ func test() func(int) int {
 		p += i
 		return p
 	}
+}
+
+func closure2(host string) func(string) string {
+	return func(port string) string {
+		s := fmt.Sprintf("%s: %s\n", host, port)
+		return s
+	}
+}
+
+// 返回多个函数
+func closure3(rhost string) (func(int), func(string) string) {
+	rh := func(port string) string {
+		s := fmt.Sprintf("%s: %s\n", rhost, port)
+		return s
+	}
+
+	ids := func(id int) {
+		fmt.Printf("id: %d - \n", id)
+	}
+
+	return ids, rh
 }
 
 func InvokeFunClosure() {
@@ -37,4 +60,13 @@ func InvokeFunClosure() {
 	// var2 的作用域已经退出
 	var3 = var4(100)
 	fmt.Printf("var3: %v\n", var3)
+
+	f := closure2("127.0.0.1")
+	fmt.Printf("f: %v\n", f("8080"))
+	fmt.Printf("f: %v\n", f("4444"))
+
+	f2, f3 := closure3("127.0.0.1")
+	f2(1)
+	// id: 1 会提前输出
+	fmt.Printf("closure3: %v\n", f3("8080"))
 }
