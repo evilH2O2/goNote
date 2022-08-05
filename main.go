@@ -1,9 +1,10 @@
 package main
 
-import "goNote/flagexample"
+import "goNote/funcexample"
 
 func main() {
-	flagexample.InvokeFlag()
+	funcexample.InvokeFunClosure()
+	// flagexample.InvokeFlag()
 
 	// httpexample.InvokeHttpExample()
 
